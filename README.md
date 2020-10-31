@@ -28,7 +28,7 @@ To run the example:
 python main.py
 ```
 
-Use the arrow keys :arrow_up: :arrow_down: :arrow_left: :arrow_right: to rotate 3D object.
+Use the arrow keys :arrow_up: :arrow_down: :arrow_left: :arrow_right: or mouse to rotate 3D object.
 
 You can change the 3D object by modifying the following line in `main.py`:
 

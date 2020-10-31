@@ -41,18 +41,51 @@ if __name__ == "__main__":
         (config.DISPLAY_LENGTH, config.DISPLAY_LENGTH)
     )
 
+    # Tick clock to limit FPS
     clock = pygame.time.Clock()
 
+    # 3D object to render
     poly = polyhedron.create_cube()
 
+    # State variables
     running = True
+    mouse_dragging = False
+    mouse_x, mouse_y = (0, 0)
+
     while running:
         for event in pygame.event.get():
+
+            # Quit button
             if event.type == pygame.QUIT:
                 running = False
-                break
 
-        # handle key presses
+            # Mouse down
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                mouse_dragging = True
+                mouse_x, mouse_y = event.pos
+
+            # Mouse up
+            elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+                mouse_dragging = False
+
+            # Mouse dragging
+            elif event.type == pygame.MOUSEMOTION and mouse_dragging:
+                # Get new mouse position
+                new_mouse_x, new_mouse_y = event.pos
+
+                # Calculate mouse position delta
+                delta_x, delta_y = (
+                    new_mouse_x - mouse_x, new_mouse_y - mouse_y
+                )
+
+                # Apply rotation based on mouse position delta
+                vector.apply_rotation(poly, delta_y, (1, 0, 0))
+                vector.apply_rotation(poly, -delta_x, (0, 1, 0))
+
+                # Store new mouse position as old mouse position
+                mouse_x, mouse_y = (new_mouse_x, new_mouse_y)
+
+        # Handle key presses
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             vector.apply_rotation(poly, 1, (0, 1, 0))
@@ -63,15 +96,15 @@ if __name__ == "__main__":
         if keys[pygame.K_DOWN]:
             vector.apply_rotation(poly, 1, (1, 0, 0))
 
-        # clear screen for redraw
+        # Clear screen for redraw
         screen.fill(config.BACKGROUND_COLOR)
 
-        # draw cube
+        # Draw cube
         draw_polyhedron(screen, config.COLOR, poly)
 
         pygame.display.flip()
 
-        # clock tick
+        # Clock tick
         clock.tick(config.TICK_RATE)
 
     pygame.quit()
