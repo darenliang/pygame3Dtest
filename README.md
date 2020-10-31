@@ -2,9 +2,13 @@
 
 A simple project that shows off basic 3D rendering in Pygame.
 
-| Cube                      | Tetrahedron                      | Octohedron                      | Icosahedron                      |
-| ------------------------- | -------------------------------- | ------------------------------- | -------------------------------- |
-| ![](screenshots/cube.PNG) | ![](screenshots/tetrahedron.PNG) | ![](screenshots/octohedron.PNG) | ![](screenshots/icosahedron.PNG) |
+| Cube                      | Tetrahedron                      |
+| ------------------------- | -------------------------------- |
+| ![](screenshots/cube.png) | ![](screenshots/tetrahedron.png) |
+
+| Octahedron                      | Icosahedron                      |
+| ------------------------------- | -------------------------------- |
+| ![](screenshots/octahedron.png) | ![](screenshots/icosahedron.png) |
 
 ### Requirements
 

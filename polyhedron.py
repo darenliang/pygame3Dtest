@@ -49,10 +49,10 @@ def create_tetrahedron() -> Polyhedron:
     Create tetrahedron
     :return: Tetrahedron
     """
-    p1 = Point(math.sqrt(8 / 9), 0, -1 / 3)
-    p2 = Point(-math.sqrt(2 / 9), math.sqrt(2 / 3), -1 / 3)
-    p3 = Point(-math.sqrt(2 / 9), -math.sqrt(2 / 3), -1 / 3)
-    p4 = Point(0, 0, 1)
+    p1 = Point(2 * math.sqrt(8 / 9), 0, -2 / 3)
+    p2 = Point(-2 * math.sqrt(2 / 9), 2 * math.sqrt(2 / 3), -2 / 3)
+    p3 = Point(-2 * math.sqrt(2 / 9), -2 * math.sqrt(2 / 3), -2 / 3)
+    p4 = Point(0, 0, 2)
 
     return Polyhedron(
         [p1, p2, p3, p4],
@@ -63,17 +63,17 @@ def create_tetrahedron() -> Polyhedron:
     )
 
 
-def create_octohedron() -> Polyhedron:
+def create_octahedron() -> Polyhedron:
     """
-    Create octohedron
-    :return: Octohedron
+    Create octahedron
+    :return: Octahedron
     """
-    p1 = Point(1, 0, 0)
-    p2 = Point(-1, 0, 0)
-    p3 = Point(0, 1, 0)
-    p4 = Point(0, -1, 0)
-    p5 = Point(0, 0, 1)
-    p6 = Point(0, 0, -1)
+    p1 = Point(2, 0, 0)
+    p2 = Point(-2, 0, 0)
+    p3 = Point(0, 2, 0)
+    p4 = Point(0, -2, 0)
+    p5 = Point(0, 0, 2)
+    p6 = Point(0, 0, -2)
 
     return Polyhedron(
         [p1, p2, p3, p4, p5, p6],
