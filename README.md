@@ -28,12 +28,19 @@ To run the example:
 python main.py
 ```
 
-Use the arrow keys :arrow_up: :arrow_down: :arrow_left: :arrow_right: to rotate the 3D object.
+Use the arrow keys :arrow_up: :arrow_down: :arrow_left: :arrow_right: to rotate 3D object.
 
 You can change the 3D object by modifying the following line in `main.py`:
 
 ```python
 poly = polyhedron.create_cube()
+```
+
+Here are some additional 3D objects already implemented:
+```python
+polyhedron.create_tetrahedron()
+polyhedron.create_octahedron()
+polyhedron.create_icosahedron()
 ```
 
 ### Cool features to implement
